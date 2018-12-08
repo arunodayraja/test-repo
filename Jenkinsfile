@@ -8,30 +8,24 @@ node {
    
   def message = sh 'git log -1' 
   echo message
-  result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
-  if (result != 0) {
-    echo "performing build..."
-    echo String.valueOf(result)
-  } else {
-    echo "not running..."
-  }
+   
    
    node {
  stage ("Skip build?") {
      result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
      if (result != 0) {
          echo ("This build should be skipped. Aborting.")
+        echo ("Here the commit message doesn't matched ")
          env.shouldBuild = "false"
      } else {
         
      echo "not running..."
+        echo ("Here the commit message matched ")
      
      }
  }
 
 }
-   
-   
-   
+    
 }
 
