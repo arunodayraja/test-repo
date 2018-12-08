@@ -5,7 +5,9 @@ node {
 node {
    
   
-  echo  'git', 'log', "--pretty=format:* %h: %s"
+  
+   
+   def message = gitLog.text
 
   checkout scm
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
