@@ -5,7 +5,7 @@ node {
 node {
    
   
-  echo  ['git', 'log', "--pretty=format:* %h: %s", 'master..HEAD'].execute().text.trim() 
+  echo  ['git', 'log', "--pretty=format:* %h: %s"] 
 
   checkout scm
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
