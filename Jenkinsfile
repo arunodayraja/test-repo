@@ -6,7 +6,7 @@ node {
    
  checkout scm
    
-  def message = git log 
+  def message = sh 'git log' 
   echo message
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
   if (result != 0) {
