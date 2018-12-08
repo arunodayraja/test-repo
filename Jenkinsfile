@@ -5,6 +5,9 @@ node {
 node {
    
  checkout scm
+   
+  def message = git log 
+  echo message
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
   if (result != 0) {
     echo "performing build..."
@@ -14,9 +17,3 @@ node {
   }
 }
 
-node {
-
-  def message = git log 
-  echo message
-
-}
