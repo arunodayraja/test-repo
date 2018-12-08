@@ -4,10 +4,9 @@ node {
 }
 node {
    
-  
-  
    
-   def message = gitLog.text
+  def message = git log --grep="JRA-224:"
+  echo message
 
   checkout scm
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
