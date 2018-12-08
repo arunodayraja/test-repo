@@ -19,7 +19,7 @@ node {
    node {
  stage ("Skip build?") {
      result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
-     if (result == 0) {
+     if (result != 0) {
          echo ("This build should be skipped. Aborting.")
          env.shouldBuild = "false"
      } else {
