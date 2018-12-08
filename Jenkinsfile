@@ -4,11 +4,7 @@ node {
 }
 node {
    
-   
-  def message = git log --grep="JRA-224:"
-  echo message
-
-  checkout scm
+ checkout scm
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
   if (result != 0) {
     echo "performing build..."
