@@ -13,3 +13,10 @@ node {
     echo "not running..."
   }
 }
+
+node {
+
+  def message = git log --grep="JRA-224:"
+  echo message
+
+}
