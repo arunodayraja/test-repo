@@ -7,7 +7,7 @@ node {
   result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
   if (result != 0) {
     echo "performing build..."
-    echo str(result)
+    echo String.valueOf(result)
   } else {
     echo "not running..."
   }
