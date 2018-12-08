@@ -16,7 +16,7 @@ node {
 
 node {
 
-  def message = git log grep="JRA-224:"
+  def message = git log 
   echo message
 
 }
