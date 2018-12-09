@@ -12,6 +12,33 @@ node {
    def message3 = sh 'git log --pretty=oneline -1 | cut -c 42- | head'
    echo message3
    
+   
+   String str = "roll snapshot" 
+  compareString(str) 
+
+def compareString(String str){ 
+  def str2 = message3 
+  if( str2.toUpperCase() == str.toUpperCase() ) { 
+    println "same" 
+  }else{ 
+    println "not same" 
+  } 
+}
+   
+   
+   
+   
+   
+   
+    if (result == 0) {
+                    echo ("'ci skip' spotted in git commit. Aborting.")
+                    shouldBuild = "false"
+                } else {
+        
+     echo "not running..."
+        echo ("Here the commit message matched and skipping and changed the code ")
+     
+     }
 
    
    def message = sh 'git log -1' 
