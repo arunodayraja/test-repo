@@ -9,12 +9,7 @@ node {
    sh 'git log --oneline -1 ${GIT_COMMIT}'
    sh 'git log --pretty=oneline -1 | cut -c 42- | head'
    
-   
-   def message3 = sh 'git log --pretty=oneline -1 | cut -c 42- | head'
-   echo message3
-   
-   
-   sh "echo sh 'git log --pretty=oneline -1 | cut -c 42- | head' > result";
+   echo sh 'git log --pretty=oneline -1 | cut -c 42- | head' > result
    def output=readFile('result').trim()
    echo output
    
