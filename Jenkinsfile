@@ -16,7 +16,7 @@ node {
         
             script {
                 checkout scm
-                result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: false) 
+                result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true) 
                echo result.toString()
                 if (result == 0) {
                     echo ("'ci skip' spotted in git commit. Aborting.")
