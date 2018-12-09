@@ -21,6 +21,8 @@ echo "Build full flag: ${BUILD_FULL}"
    
    def value = echo "${BUILD_FULL}"
    
+   echo value
+   
    if (value == false) {
       
                     echo ("'ci skip' spotted in git commit. Aborting.")
