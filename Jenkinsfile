@@ -19,7 +19,7 @@ def BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",
    
 echo "Build full flag: ${BUILD_FULL}"
    
-   def value = ${BUILD_FULL}
+   def value = echo "${BUILD_FULL}"
    
    if (value == false) {
       
