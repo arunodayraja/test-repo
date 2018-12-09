@@ -12,10 +12,16 @@ node {
    
    
    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').toString().trim()
-   commitChangeset = sh(script: 'ls -al', returnStdout: true)
+
+   
+   GIT_COMMIT_EMAIL = sh (script: 'git --no-pager show -s --format=\'%ae\'', returnStdout: true).trim()
+   
+   echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+   
+   
    
    echo gitCommit
-   echo commitChangeset
+   echo GIT_COMMIT_EMAIL
    
    
   
