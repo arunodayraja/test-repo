@@ -24,16 +24,7 @@ echo "Build full flag: ${BUILD_FULL}"
    
    
    
-   String str = "roll snapshot" 
-   def str2 = message3 
-  if( sh 'str2.toUpperCase() == str.toUpperCase() ) { 
-    println "same" 
-  }else{ 
-    println "not same" 
-  } 
-
-
-   
+    
    def message = sh 'git log -1' 
    echo message
    
