@@ -1,4 +1,5 @@
 node {
+   def result
    echo 'Hello World'
    git credentialsId: 'git-login', url: 'https://github.com/arunodayraja/test-repo'
 }
