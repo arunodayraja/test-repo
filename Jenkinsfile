@@ -13,7 +13,7 @@ node {
    
    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').toString().trim()
    
-   BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[roll status]'",returnStdout: true).trim()
+   BUILD_FULL = sh (script: "git log --pretty=oneline -1 | cut -c 42- | head | grep '\\[roll status]'",returnStdout: true).trim()
 
    
    
