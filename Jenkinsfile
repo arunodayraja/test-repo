@@ -7,6 +7,13 @@ node {
  checkout scm
    def message2 = sh 'git log --oneline -1 ${GIT_COMMIT}'
    echo message2
+   
+   
+   def message3 = sh 'git log --pretty=oneline | cut -c 42- | head'
+   echo message3
+   
+
+   
    def message = sh 'git log -1' 
    echo message
    
