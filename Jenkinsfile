@@ -6,7 +6,7 @@ node {
    
  checkout scm
    
-   echo sh 'git log --oneline -1 ${GIT_COMMIT}'
+   sh 'git log --oneline -1 ${GIT_COMMIT}'
    
    
    
