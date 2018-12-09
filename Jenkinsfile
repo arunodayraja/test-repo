@@ -12,7 +12,10 @@ node {
    
    
    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').toString().trim()
+   
+   BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[roll status]'",returnStdout: true).trim()
 
+   
    
    GIT_COMMIT_EMAIL = sh (script: 'git --no-pager show -s --format=\'%ae\'', returnStdout: true).trim()
    
@@ -22,8 +25,7 @@ node {
    
    echo gitCommit
    echo GIT_COMMIT_EMAIL
-   echo ret
-   
+   echo  BUILD_FULL
   
         
     }
