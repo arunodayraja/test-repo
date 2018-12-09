@@ -19,7 +19,16 @@ def BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'",
    
 echo "Build full flag: ${BUILD_FULL}"
    
-   
+   if (${BUILD_FULL} == false) {
+      
+                    echo ("'ci skip' spotted in git commit. Aborting.")
+                    shouldBuild = "false"
+                } else {
+        
+     echo "not running..."
+        echo ("Here the commit message matched and skipping and changed the code ")
+     
+     }
    
    
    
