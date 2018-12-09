@@ -12,7 +12,7 @@ node {
    
    
    gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').toString().trim()
-   commitChangeset = sh(script: 'ls -al', returnStdout: true).result
+   commitChangeset = sh(script: 'ls -al', returnStdout: true)
    
    echo gitCommit
    echo commitChangeset
