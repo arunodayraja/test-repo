@@ -24,7 +24,7 @@ node {
                 } else {
         
      echo "not running..."
-        echo ("Here the commit message matched ")
+        echo ("Here the commit message matched and skipping ")
      
      }
             }
