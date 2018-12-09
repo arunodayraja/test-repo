@@ -16,7 +16,7 @@ node {
     echo result.toString()
      if (result == 0) {
          echo ("This build should be skipped. Aborting.")
-        echo ("Here the commit message doesn't matched ")
+        echo ("Here the commit message not matched ")
          env.shouldBuild = "false"
      } else {
         
