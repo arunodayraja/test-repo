@@ -9,7 +9,7 @@ node {
    echo message2
    
    
-   def message3 = sh 'git log --pretty=oneline | cut -c 42- | head'
+   def message3 = sh 'git log --pretty=oneline -1 | cut -c 42- | head'
    echo message3
    
 
