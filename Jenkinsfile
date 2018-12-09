@@ -14,16 +14,13 @@ node {
    
    
    String str = "roll snapshot" 
-  compareString(str) 
-
-def compareString(String str){ 
-  def str2 = message3 
+   def str2 = message3 
   if( str2.toUpperCase() == str.toUpperCase() ) { 
     println "same" 
   }else{ 
     println "not same" 
   } 
-}
+
    
    
    
