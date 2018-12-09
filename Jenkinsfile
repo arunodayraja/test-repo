@@ -23,7 +23,7 @@ echo "Build full flag: ${BUILD_FULL}"
    
    echo value
    
-   if (value == false) {
+   if (BUILD_FULL == false) {
       
                     echo ("'ci skip' spotted in git commit. Aborting.")
                     shouldBuild = "false"
