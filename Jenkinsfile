@@ -21,21 +21,6 @@ node {
     println "not same" 
   } 
 
-   
-   
-   
-   
-   
-   
-    if (result == 0) {
-                    echo ("'ci skip' spotted in git commit. Aborting.")
-                    shouldBuild = "false"
-                } else {
-        
-     echo "not running..."
-        echo ("Here the commit message matched and skipping and changed the code ")
-     
-     }
 
    
    def message = sh 'git log -1' 
