@@ -10,9 +10,10 @@ node {
    sh 'git log --oneline -1 ${GIT_COMMIT}'
    sh 'git log --pretty=oneline -1 | cut -c 42- | head'
    
-sh 'echo (sh 'git log --pretty=oneline -1 | cut -c 42- | head') > result'
-def output=readFile('result').trim()
-echo output
+   
+   gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').toString().trim()
+   
+   echo gitCommit
    
    
    
