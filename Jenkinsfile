@@ -13,7 +13,7 @@ node {
    node {
  stage ("Skip build?") {
      result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true)
-    echo result
+    echo result.toString()
      if (result == 0) {
          echo ("This build should be skipped. Aborting.")
         echo ("Here the commit message doesn't matched ")
