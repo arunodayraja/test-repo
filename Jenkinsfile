@@ -14,9 +14,19 @@ node {
    echo message3
    
    
+   // Test commit message for flags
+def BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[jenkins-full]'", returnStatus: true) == 0
+   
+echo "Build full flag: ${BUILD_FULL}"
+   
+   
+   
+   
+   
+   
    String str = "roll snapshot" 
    def str2 = message3 
-  if( sh 'git log --pretty=oneline -1 | cut -c 42- | head'.toUpperCase() == str.toUpperCase() ) { 
+  if( sh 'str2.toUpperCase() == str.toUpperCase() ) { 
     println "same" 
   }else{ 
     println "not same" 
