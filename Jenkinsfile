@@ -15,7 +15,7 @@ node {
    
    
    // Test commit message for flags
-def BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[roll snapshot]'", returnStatus: true) == 0
+def BUILD_FULL = sh (script: "git log -1 --pretty=%B | grep '\\[roll snapshot]'", returnStatus: true) == 1
    
 echo "Build full flag: ${BUILD_FULL}"
    
