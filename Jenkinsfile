@@ -18,11 +18,11 @@ node {
    
    echo "Git committer email: ${GIT_COMMIT_EMAIL}"
    
-   
+   def ret = sh(script: 'uname', returnStdout: true)
    
    echo gitCommit
    echo GIT_COMMIT_EMAIL
-   
+   echo ret
    
   
         
