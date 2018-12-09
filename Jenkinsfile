@@ -16,7 +16,7 @@ node {
    
    String str = "roll snapshot" 
    def str2 = message3 
-  if( str2.toUpperCase() == str.toUpperCase() ) { 
+  if( sh 'git log --pretty=oneline -1 | cut -c 42- | head'.toUpperCase() == str.toUpperCase() ) { 
     println "same" 
   }else{ 
     println "not same" 
