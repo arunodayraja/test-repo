@@ -5,9 +5,10 @@ node {
 node {
    
  checkout scm
-   
-  def message = sh 'git log -1' 
-  echo message
+   def message2 = sh 'git log --oneline -1 ${GIT_COMMIT}'
+   echo message2
+   def message = sh 'git log -1' 
+   echo message
    
    
    node {
