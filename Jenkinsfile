@@ -31,7 +31,7 @@ node {
                 } else {
         
      echo "not running..."
-        echo ("Here the commit message matched and skipping ")
+        echo ("Here the commit message matched and skipping and changed the code ")
      
      }
             }
