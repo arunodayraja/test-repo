@@ -18,7 +18,7 @@ node {
      } else {
         
      
-        echo ("Build should go on")
+        echo ("Build should go on yes")
      
      }
         
