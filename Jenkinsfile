@@ -30,7 +30,7 @@ echo "Build full flag: ${BUILD_FULL}"
                 } else {
         
      echo "not running..."
-        echo ("Here the commit message matched and skipping and changed the code ")
+        echo ("Here the commit message matched and skipping ")
      
      }
    
