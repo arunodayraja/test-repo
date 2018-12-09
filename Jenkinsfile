@@ -28,7 +28,7 @@ node {
 
 }
     stage ("Checkout SCM") {
-        steps {
+        
             script {
                 checkout scm
                 result = sh (script: "git log -1 | grep '.*\\[ci skip\\].*'", returnStatus: true) 
@@ -44,5 +44,5 @@ node {
             }
         }
     }
-}
+
 
