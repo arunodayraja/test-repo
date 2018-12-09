@@ -16,7 +16,7 @@ node {
    
    sh "echo sh 'git log --pretty=oneline -1 | cut -c 42- | head' > result";
    def output=readFile('result').trim()
-   echo $output
+   echo output
    
    
    if (true == true) {
